@@ -1,69 +1,65 @@
-Alright, here is a structured architecture for your MQTT broker service, along with a PUB/SUB message structure:
+Your setup sounds exciting! Let's create a PUB/SUB architecture for your MQTT service:
 
-**1. MQTT Topic Structure:**
+1. **Topics Design**:
 
-For simplicity, and to easily identify different devices, each ESP32 device can be given a unique identifier. Here's a recommended topic structure:
+   Break down the MQTT topics for clarity and scalability:
 
-1.1. **To Server (Publish by ESP32)**
-- `aliados/device/{device_id}/status` - Sends status updates (e.g., activated, finished).
-- `aliados/device/{device_id}/result` - Sends game results (player name, time to finish, retries, etc).
+   - `escape-room/tests/activated`: 
+     - Published by: ESP32 Arduino units
+     - Payload example: `{"testID": "test123", "timestamp": "2023-09-17T14:34:56Z"}`
 
-1.2. **From Server (Subscribed by ESP32)**
-- `aliados/device/{device_id}/settings` - For changing settings on the device like max time or game loop iterations.
+   - `escape-room/tests/completed`: 
+     - Published by: ESP32 Arduino units
+     - Payload example: `{"testID": "test123", "playerName": "John", "timeToFinish": "15m", "retries": 2, "completedOnTime": true}`
 
-1.3. **From Control Panel (Publish by Webpage)**
-- `aliados/control/start` - Signal to start the game/test.
-- `aliados/control/stop` - Signal to stop or reset the game/test.
-- `aliados/control/settings` - Publish settings to be subscribed by the server and then pushed to devices.
+   - `escape-room/tests/settings`: 
+     - Published by: Control Panel Webpage
+     - Payload example: `{"testID": "test123", "maxTime": "30m", "iterations": 5}`
+     
+     - Subscribed by: ESP32 Arduino units to update test settings
 
-**2. MQTT Message Payloads:**
+2. **Dockerized Services**:
 
-2.1. **To Server**
-- Status update: `{"status": "activated"}` or `{"status": "finished"}`
-- Results: `{"player_name": "John", "time_taken": "15:30", "retries": 3, "outcome": "success"}`
+   - **Mosquitto MQTT Broker**: For handling all PUB/SUB operations.
+     
+   - **Node-RED**: For managing and processing MQTT messages and interfacing with Grafana. Node-RED can process MQTT data and update databases, run logic, etc.
 
-2.2. **From Server**
-- Settings: `{"max_time": "20:00", "game_loops": 5}`
+   - **Grafana**: For visualizing data and possibly interfacing with the user. Grafana can present the test results in a user-friendly manner.
 
-2.3. **From Control Panel**
-- Start: `{"command": "start"}`
-- Stop: `{"command": "stop"}`
-- Settings: `{"max_time": "25:00", "game_loops": 7}`
+   - **Database (like InfluxDB)**: Store game results, player statistics, and any other historical data you might want to keep or visualize later.
 
-**3. Docker Setup:**
+3. **Flow**:
 
-3.1. **MQTT Broker (e.g., Mosquitto) Container**:
-- This is the core of your system. 
+   1. **Game Activation**:
+      - ESP32 activates a game/test and publishes a message to `escape-room/tests/activated`.
+      - Node-RED subscribes to this topic, processes the message, and may store the game activation data in the database.
+   
+   2. **Game Completion**:
+      - ESP32 publishes the game results to `escape-room/tests/completed`.
+      - Node-RED processes the results, updates the database, and can trigger visual updates on Grafana.
 
-3.2. **Backend Server Container**:
-- Listens to MQTT topics and performs necessary logic.
-- Stores results in a database.
-- Pushes settings to ESP32 devices.
+   3. **Settings Change**:
+      - Admin/user adjusts settings on the Grafana (or separate) interface.
+      - These changes are published to `escape-room/tests/settings`.
+      - ESP32 units subscribe to this topic and adjust their game settings accordingly.
 
-3.3. **Database Container** (e.g., SQLite for simplicity or PostgreSQL for more complexity):
-- Store results of each game.
-- Store device settings, if necessary.
+   4. **Visualization**:
+      - Grafana reads from the database and provides visual stats, charts, and any other necessary feedback about games/tests.
 
-3.4. **Frontend Web Application Container**:
-- Allows user to interact with the service.
-- Sends start, stop, and setting commands.
-- Shows results and device statuses.
+4. **Security**:
+   Given you're working with escape rooms, user data, and real-time feedback, you'd want to ensure:
+   
+   - Encryption: Make sure the MQTT messages are encrypted, especially if running over public networks.
+   - Authentication: Only allow authorized devices to publish/subscribe to your MQTT topics.
+   - Database Security: Ensure only authorized services can access and modify the database.
 
-3.5. **MQTT Web Bridge Container** (Optional, for direct MQTT communication from the webpage):
-- If you want the web application to communicate directly with the MQTT broker.
+5. **Scalability**:
+   
+   - You might want to consider breaking down topics even further, based on different room designs, different locations (if you expand), or different game types.
 
-**4. Workflow:**
+6. **Web Interface**:
+   
+   - Should be mobile responsive to allow users to access easily from their phones.
+   - Should have both admin and user sections. The admin section for changing game settings and viewing overall statistics. The user section for viewing their game stats.
 
-1. The control panel webpage is opened by the user. They can start or stop a game, or change settings.
-2. ESP32 devices continuously publish their status to the MQTT broker.
-3. The backend server listens to these statuses and stores results in the database.
-4. The backend server listens for settings from the control panel and then forwards those settings to the ESP32 devices.
-5. The webpage can also retrieve game results and display them to the user.
-
-**5. Security:**
-
-Ensure the MQTT broker is secured. Use username/password authentication or even client certificate authentication. Ensure that only trusted clients can publish or subscribe to critical topics.
-
-Given the above architecture, you can start setting up each component, developing the necessary code for the backend server, and designing the control panel webpage.
-
-
+By combining Docker with Mosquitto, Node-RED, and Grafana, you'll have a powerful, scalable, and flexible architecture to support the operation of your escape room tests.
