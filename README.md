@@ -2,15 +2,15 @@
 
    Break down the MQTT topics for clarity and scalability:
 
-   - `escape-room/tests/activated`: 
+   - `aliados/tests/activated`: 
      - Published by: ESP32 Arduino units
      - Payload example: `{"testID": "test123", "timestamp": "2023-09-17T14:34:56Z"}`
 
-   - `escape-room/tests/completed`: 
+   - `aliados/tests/completed`: 
      - Published by: ESP32 Arduino units
      - Payload example: `{"testID": "test123", "playerName": "John", "timeToFinish": "15m", "retries": 2, "completedOnTime": true}`
 
-   - `escape-room/tests/settings`: 
+   - `aliados/tests/settings`: 
      - Published by: Control Panel Webpage
      - Payload example: `{"testID": "test123", "maxTime": "30m", "iterations": 5}`
      
@@ -29,23 +29,22 @@
 3. **Flow**:
 
    1. **Game Activation**:
-      - ESP32 activates a game/test and publishes a message to `escape-room/tests/activated`.
+      - ESP32 activates a game/test and publishes a message to `aliados/tests/activated`.
       - Node-RED subscribes to this topic, processes the message, and may store the game activation data in the database.
    
    2. **Game Completion**:
-      - ESP32 publishes the game results to `escape-room/tests/completed`.
+      - ESP32 publishes the game results to `aliados/tests/completed`.
       - Node-RED processes the results, updates the database, and can trigger visual updates on Grafana.
 
    3. **Settings Change**:
       - Admin/user adjusts settings on the Grafana (or separate) interface.
-      - These changes are published to `escape-room/tests/settings`.
+      - These changes are published to `aliados/tests/settings`.
       - ESP32 units subscribe to this topic and adjust their game settings accordingly.
 
    4. **Visualization**:
       - Grafana reads from the database and provides visual stats, charts, and any other necessary feedback about games/tests.
 
 4. **Security**:
-   Given you're working with escape rooms, user data, and real-time feedback, you'd want to ensure:
    
    - Encryption: Make sure the MQTT messages are encrypted, especially if running over public networks.
    - Authentication: Only allow authorized devices to publish/subscribe to your MQTT topics.
@@ -60,4 +59,4 @@
    - Should be mobile responsive to allow users to access easily from their phones.
    - Should have both admin and user sections. The admin section for changing game settings and viewing overall statistics. The user section for viewing their game stats.
 
-By combining Docker with Mosquitto, Node-RED, and Grafana, you'll have a powerful, scalable, and flexible architecture to support the operation of your escape room tests.
+By combining Docker with Mosquitto, Node-RED, and Grafana, you'll have a powerful, scalable, and flexible architecture to support the operation.
