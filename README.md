@@ -1,5 +1,3 @@
-Your setup sounds exciting! Let's create a PUB/SUB architecture for your MQTT service:
-
 1. **Topics Design**:
 
    Break down the MQTT topics for clarity and scalability:
