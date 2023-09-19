@@ -1,0 +1,117 @@
+1695068888: mosquitto version 2.0.17 starting
+1695068888: Config loaded from /mosquitto/config/mosquitto.conf.
+1695068888: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1695068888: Create a configuration file which defines a listener to allow remote access.
+1695068888: For more details see https://mosquitto.org/documentation/authentication-methods/
+1695068888: Opening ipv4 listen socket on port 1883.
+1695068888: Opening ipv6 listen socket on port 1883.
+1695068888: Error: Address not available
+1695068888: mosquitto version 2.0.17 running
+1695068934: mosquitto version 2.0.17 terminating
+1695068934: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1695069072: mosquitto version 2.0.17 starting
+1695069072: Config loaded from /mosquitto/config/mosquitto.conf.
+1695069072: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1695069072: Create a configuration file which defines a listener to allow remote access.
+1695069072: For more details see https://mosquitto.org/documentation/authentication-methods/
+1695069072: Opening ipv4 listen socket on port 1883.
+1695069072: Opening ipv6 listen socket on port 1883.
+1695069072: Error: Address not available
+1695069072: mosquitto version 2.0.17 running
+1695069102: mosquitto version 2.0.17 terminating
+1695069102: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1695070751: mosquitto version 2.0.17 starting
+1695070751: Config loaded from /mosquitto/config/mosquitto.conf.
+1695070751: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+1695070751: Warning: File /mosquitto/config/passwords.txt owner is not mosquitto. Future versions will refuse to load this file.
+1695070751: Warning: File /mosquitto/config/passwords.txt group is not mosquitto. Future versions will refuse to load this file.
+1695070751: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1695070751: Create a configuration file which defines a listener to allow remote access.
+1695070751: For more details see https://mosquitto.org/documentation/authentication-methods/
+1695070751: Opening ipv4 listen socket on port 1883.
+1695070751: Opening ipv6 listen socket on port 1883.
+1695070751: Error: Address not available
+1695070751: mosquitto version 2.0.17 running
+1695072551: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1695074352: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1695076153: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1695077954: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1695078764: mosquitto version 2.0.17 terminating
+1695078764: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1695078892: mosquitto version 2.0.17 starting
+1695078892: Config loaded from /mosquitto/config/mosquitto.conf.
+1695078892: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+1695078892: Warning: File /mosquitto/config/passwords.txt owner is not mosquitto. Future versions will refuse to load this file.
+1695078892: Warning: File /mosquitto/config/passwords.txt group is not mosquitto. Future versions will refuse to load this file.
+1695078892: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1695078892: Create a configuration file which defines a listener to allow remote access.
+1695078892: For more details see https://mosquitto.org/documentation/authentication-methods/
+1695078892: Opening ipv4 listen socket on port 1883.
+1695078892: Opening ipv6 listen socket on port 1883.
+1695078892: Error: Address not available
+1695078892: mosquitto version 2.0.17 running
+1695080168: mosquitto version 2.0.17 terminating
+1695080168: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1695080298: mosquitto version 2.0.17 starting
+1695080298: Config loaded from /mosquitto/config/mosquitto.conf.
+1695080298: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+1695080298: Warning: File /mosquitto/config/passwords.txt owner is not mosquitto. Future versions will refuse to load this file.
+1695080298: Warning: File /mosquitto/config/passwords.txt group is not mosquitto. Future versions will refuse to load this file.
+1695080298: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1695080298: Create a configuration file which defines a listener to allow remote access.
+1695080298: For more details see https://mosquitto.org/documentation/authentication-methods/
+1695080298: Opening ipv4 listen socket on port 1883.
+1695080298: Opening ipv6 listen socket on port 1883.
+1695080298: Error: Address not available
+1695080298: mosquitto version 2.0.17 running
+1695080611: mosquitto version 2.0.17 terminating
+1695080611: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1695080769: mosquitto version 2.0.17 starting
+1695080769: Config loaded from /mosquitto/config/mosquitto.conf.
+1695080769: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+1695080769: Warning: File /mosquitto/config/passwords.txt owner is not mosquitto. Future versions will refuse to load this file.
+1695080769: Warning: File /mosquitto/config/passwords.txt group is not mosquitto. Future versions will refuse to load this file.
+1695080769: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1695080769: Create a configuration file which defines a listener to allow remote access.
+1695080769: For more details see https://mosquitto.org/documentation/authentication-methods/
+1695080769: Opening ipv4 listen socket on port 1883.
+1695080769: Opening ipv6 listen socket on port 1883.
+1695080769: Error: Address not available
+1695080769: mosquitto version 2.0.17 running
+1695080804: mosquitto version 2.0.17 starting
+1695080804: Config loaded from /mosquitto/config/mosquitto.conf.
+1695080804: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+1695080804: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1695080804: Create a configuration file which defines a listener to allow remote access.
+1695080804: For more details see https://mosquitto.org/documentation/authentication-methods/
+1695080804: Opening ipv4 listen socket on port 1883.
+1695080804: Opening ipv6 listen socket on port 1883.
+1695080804: Error: Address not available
+1695080804: mosquitto version 2.0.17 running
+1695081268: mosquitto version 2.0.17 starting
+1695081268: Config loaded from /mosquitto/config/mosquitto.conf.
+1695081268: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+1695081268: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1695081268: Create a configuration file which defines a listener to allow remote access.
+1695081268: For more details see https://mosquitto.org/documentation/authentication-methods/
+1695081268: Opening ipv4 listen socket on port 1883.
+1695081268: Opening ipv6 listen socket on port 1883.
+1695081268: Error: Address not available
+1695081268: mosquitto version 2.0.17 running
+1695081790: mosquitto version 2.0.17 terminating
+1695081790: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1695081943: mosquitto version 2.0.18 starting
+1695081943: Config loaded from /mosquitto/config/mosquitto.conf.
+1695081943: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1695081943: Create a configuration file which defines a listener to allow remote access.
+1695081943: For more details see https://mosquitto.org/documentation/authentication-methods/
+1695081943: Opening ipv4 listen socket on port 1883.
+1695081943: Opening ipv6 listen socket on port 1883.
+1695081943: Error: Address not available
+1695081943: mosquitto version 2.0.18 running
+1695082245: mosquitto version 2.0.18 terminating
+1695082245: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1695082379: mosquitto version 2.0.18 starting
+1695082379: Config loaded from /mosquitto/config/mosquitto.conf.
+1695082379: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1695082379: Error opening password file "/mosquitto/config/passwords.txt".
